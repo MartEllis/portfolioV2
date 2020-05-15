@@ -1,0 +1,52 @@
+.intro {
+
+    .wave {
+        margin: 1rem 0;
+        animation-name: wobble-wave;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        transform-origin: right bottom;
+
+        @keyframes wobble-wave {
+            5% {transform: rotate(15deg);}
+            10% {transform: rotate(0deg);}
+            15% {transform: rotate(15deg);}
+            20% {transform: rotate(0deg);}
+        }
+    }
+
+    .intro-text {
+        margin-bottom: 2rem;
+
+        b {
+            font-weight: 900;
+        }
+    }
+
+    .contact-me {
+        display: inline-block;
+        padding: .3rem 2rem;
+        background-color: #11904C;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: .8rem;
+        color: #fafafa;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .intro {
+
+        .wave {
+            margin-top: 0;
+        }
+
+        .intro-text {
+            max-width: 90%;
+        }
+    }
+
+}
+
