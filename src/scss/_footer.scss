@@ -1,18 +1,23 @@
-footer {
-    .footer-socials {
-        position: fixed;
-        bottom: 1rem;
-        right: 12%;
-        display: flex;
-        list-style: none;
+@media screen and (min-width: 960px) {
 
-        .footer-social-item {
-            margin-left: 1.4rem;
+    footer {
+        .footer-socials {
+            position: fixed;
+            bottom: 1rem;
+            right: 12%;
+            display: flex;
+            flex-direction: row;
+            list-style: none;
 
-            i {
-                font-size: 1.4rem;
-                color: $accent2;
+            .footer-social-item {
+                margin-left: 1.4rem;
+
+                i {
+                    font-size: 1.4rem;
+                    color: $accent2;
+                }
             }
         }
     }
+
 }

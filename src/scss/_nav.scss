@@ -4,6 +4,7 @@ nav {
     position: fixed;
     padding: .8rem 0 0;
     background-color: white;
+    z-index: 10000;
 
     .navbar {
         display: flex;
@@ -43,5 +44,12 @@ nav {
                 }
             }
         }
+    }
+}
+
+
+@media screen and (min-width: 960px) { 
+    .hamburger {
+        display: none !important;
     }
 }

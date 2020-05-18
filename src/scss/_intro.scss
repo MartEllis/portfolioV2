@@ -1,9 +1,10 @@
 .intro {
+    margin-top: .2rem;
 
     .wave {
         margin: 1rem 0;
         animation-name: wobble-wave;
-        animation-duration: 6s;
+        animation-duration: 4s;
         animation-iteration-count: infinite;
         transform-origin: right bottom;
 
@@ -12,6 +13,8 @@
             10% {transform: rotate(0deg);}
             15% {transform: rotate(15deg);}
             20% {transform: rotate(0deg);}
+            25% {transform: rotate(15deg);}
+            25% {transform: rotate(0deg);}
         }
     }
 
@@ -24,8 +27,7 @@
     }
 
     .contact-me {
-        display: inline-block;
-        padding: .3rem 2rem;
+        padding: .4rem 2rem;
         background-color: #11904C;
         text-align: center;
         text-transform: uppercase;
@@ -38,6 +40,7 @@
 
 @media screen and (min-width: 960px) {
     .intro {
+        height: 50%;
 
         .wave {
             margin-top: 0;
@@ -45,7 +48,12 @@
 
         .intro-text {
             max-width: 90%;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+
+            .email-link {
+                color: $accent;
+                display: inline-block;
+            }
         }
     }
 

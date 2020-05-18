@@ -35,7 +35,7 @@ h1 {
 }
 
 .desktop-only {
-  display: none !important;
+  display: none;
 }
 
 .hide-scrollbar {
@@ -51,12 +51,12 @@ h1 {
 }
 
 @media screen and (min-width: 960px) {
-  .desktop-only {
-    display: block;
+  .mobile-only {
+    display: none;
   }
 
-  .mobile-only {
-    display: none !important;
+  .desktop-only {
+    display: block;
   }
 
   .main {
@@ -66,6 +66,7 @@ h1 {
   }
   .main .left {
     flex-basis: 50%;
+    max-height: 90vh;
   }
   .main .right {
     flex-basis: 50%;
@@ -82,6 +83,7 @@ nav {
   position: fixed;
   padding: 0.8rem 0 0;
   background-color: white;
+  z-index: 10000;
 }
 nav .navbar {
   display: flex;
@@ -118,10 +120,18 @@ nav .navbar .hamburger .line:nth-child(3) {
   width: 26px;
 }
 
+@media screen and (min-width: 960px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+.intro {
+  margin-top: 0.2rem;
+}
 .intro .wave {
   margin: 1rem 0;
   animation-name: wobble-wave;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   transform-origin: right bottom;
 }
@@ -138,6 +148,12 @@ nav .navbar .hamburger .line:nth-child(3) {
   20% {
     transform: rotate(0deg);
   }
+  25% {
+    transform: rotate(15deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
 }
 .intro .intro-text {
   margin-bottom: 2rem;
@@ -146,8 +162,7 @@ nav .navbar .hamburger .line:nth-child(3) {
   font-weight: 900;
 }
 .intro .contact-me {
-  display: inline-block;
-  padding: 0.3rem 2rem;
+  padding: 0.4rem 2rem;
   background-color: #11904C;
   text-align: center;
   text-transform: uppercase;
@@ -158,12 +173,19 @@ nav .navbar .hamburger .line:nth-child(3) {
 }
 
 @media screen and (min-width: 960px) {
+  .intro {
+    height: 50%;
+  }
   .intro .wave {
     margin-top: 0;
   }
   .intro .intro-text {
     max-width: 90%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .intro .intro-text .email-link {
+    color: #36b447;
+    display: inline-block;
   }
 }
 .projects {
@@ -197,7 +219,7 @@ nav .navbar .hamburger .line:nth-child(3) {
 .projects .projects-container .project-item .project-view .clickthroughs a {
   font-size: 0.7rem;
   text-transform: uppercase;
-  color: #145c0d;
+  color: #36b447;
   text-decoration: none;
   display: block;
   margin: 1rem 0;
@@ -295,7 +317,7 @@ nav .navbar .hamburger .line:nth-child(3) {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   border: 1px solid #4d4d4d;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .contact-form form input:not([type=submit]):not([type=reset])[name=message], .contact-form form textarea[name=message] {
   height: 8rem;
@@ -305,6 +327,7 @@ nav .navbar .hamburger .line:nth-child(3) {
 .contact-form form input:not([type=submit]):not([type=reset])::placeholder, .contact-form form textarea::placeholder {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  color: #a3a3a3;
 }
 .contact-form form input:not([type=submit]):not([type=reset]):focus, .contact-form form textarea:focus {
   border: 2px solid #428fe7;
@@ -319,7 +342,10 @@ nav .navbar .hamburger .line:nth-child(3) {
 .contact-form form input:not([type=submit]):not([type=reset]):required, .contact-form form textarea:required {
   box-shadow: none;
 }
-.contact-form form input[type=reset], .contact-form form input[type=submit] {
+.contact-form form .form-buttons {
+  width: 100%;
+}
+.contact-form form .form-buttons input[type=reset], .contact-form form .form-buttons input[type=submit] {
   display: inline-block;
   padding: 0.3rem 2rem;
   height: 2rem;
@@ -333,11 +359,11 @@ nav .navbar .hamburger .line:nth-child(3) {
   border: none;
   font-weight: 700;
 }
-.contact-form form input[type=reset] {
+.contact-form form .form-buttons input[type=reset] {
   background-color: #145c0d;
   margin-top: 0.6rem;
 }
-.contact-form form input[type=submit] {
+.contact-form form .form-buttons input[type=submit] {
   background-color: #36b447;
 }
 
@@ -345,6 +371,7 @@ nav .navbar .hamburger .line:nth-child(3) {
   div.contact-form {
     max-width: 90%;
     margin-top: 1rem;
+    height: 50%;
   }
   div.contact-form .contact-header {
     display: none;
@@ -355,8 +382,14 @@ nav .navbar .hamburger .line:nth-child(3) {
     justify-content: space-between;
     width: 100%;
   }
-  div.contact-form .name-and-email input {
+  div.contact-form .name-and-email .name-form-group, div.contact-form .name-and-email .email-form-group {
     flex-basis: 48%;
+  }
+  div.contact-form .message-form-group {
+    width: 100%;
+  }
+  div.contact-form .message-form-group textarea {
+    height: 5rem;
   }
   div.contact-form .form-buttons {
     display: flex;
@@ -371,19 +404,22 @@ nav .navbar .hamburger .line:nth-child(3) {
     margin-top: 0;
   }
 }
-footer .footer-socials {
-  position: fixed;
-  bottom: 1rem;
-  right: 12%;
-  display: flex;
-  list-style: none;
-}
-footer .footer-socials .footer-social-item {
-  margin-left: 1.4rem;
-}
-footer .footer-socials .footer-social-item i {
-  font-size: 1.4rem;
-  color: #145c0d;
+@media screen and (min-width: 960px) {
+  footer .footer-socials {
+    position: fixed;
+    bottom: 1rem;
+    right: 12%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+  }
+  footer .footer-socials .footer-social-item {
+    margin-left: 1.4rem;
+  }
+  footer .footer-socials .footer-social-item i {
+    font-size: 1.4rem;
+    color: #145c0d;
+  }
 }
 
 /*# sourceMappingURL=/js.00a46daa.css.map */
