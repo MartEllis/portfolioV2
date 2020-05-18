@@ -12,24 +12,44 @@
 
             .project-view {
                 position: relative;
+                overflow: hidden;
 
                 img {
                     max-width: 100%;
+                    transition: all .4s ease-in;
 
                 }
 
                 .clickthroughs {
                     position: absolute;
-                    right: .4rem;
-                    bottom: .6rem;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    transition: all .4s ease-in;
 
                     a {
-                        margin-left: .2rem;
+                        font-size: .7rem;
+                        text-transform: uppercase;
+                        color: $accent2;
+                        text-decoration: none;
+                        display: block;
+                        margin: 1rem 0;
 
                         i {
-                            font-size: 1.4rem;
+                            margin-left: .4rem;
                         }
                     }
+                }
+
+                &:hover .clickthroughs {
+                    opacity: 1;
+                    
+                }
+
+                &:hover img {
+                    filter: brightness(0.2);
+                    // transform: scale(1.1);
                 }
             }
 
@@ -79,12 +99,14 @@
         margin-top: 0;
         max-height: 90vh;
         overflow: scroll;
+        scroll-behavior: smooth;
 
         div.projects-container {
             display: flex;
             flex-direction: column;
             flex-flow: column wrap;
             align-items: initial;
+            max-height: inherit;
             max-height: 150vh;
 
             .project-item {

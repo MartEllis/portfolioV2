@@ -1,0 +1,18 @@
+footer {
+    .footer-socials {
+        position: fixed;
+        bottom: 1rem;
+        right: 12%;
+        display: flex;
+        list-style: none;
+
+        .footer-social-item {
+            margin-left: 1.4rem;
+
+            i {
+                font-size: 1.4rem;
+                color: $accent2;
+            }
+        }
+    }
+}

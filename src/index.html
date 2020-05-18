@@ -40,25 +40,36 @@
                 <h1 class="contact-header">Contact</h1>
                 <form action="https://smartforms.dev/submit/5ebd74988a02626591cb5ade" method="POST" id="contactform">
                     <div class="name-and-email">
-                        <input type="text" name="name" id="name" required placeholder="Your name">
-                        <input type="email" name="email" id="email" required placeholder="Your email">
+                        <div class="name-form-group">
+                            <label for="name">Who are you?</label>
+                            <input type="text" name="name" id="name" required placeholder="Your name">
+                        </div>
+                        <div class="email-form-group">
+                            <label for="email">Where Can I Contact You?</label>
+                            <input type="email" name="email" id="email" required placeholder="Your email">
+                        </div>
                     </div>
-                    <textarea name="message" form="contactform" required placeholder="Your message">
-                    <input type="submit" value="send">
-                    <input type="reset" value="clear">
+                    <div class="message-form-group">
+                        <label for="message">What's up?</label>
+                        <textarea name="message" form="contactform" required placeholder="Your message"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <input type="submit" value="send">
+                        <input type="reset" value="clear">
+                    </div>
                 </form>
             </div>
         </div>
         <div class="right">
-            <div class="projects">
+            <div class="projects hide-scrollbar">
                 <h1 class="projects-header">Recent Projects</h1>
                 <div class="projects-container">
                     <div class="project-item">
                         <div class="project-view">
                             <img src="https://source.unsplash.com/random/800x1000" alt="">
                             <div class="clickthroughs">
-                                <a href="" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="" class="project-link">View Live Website<i class="fas fa-external-link-alt"></i></a>
+                                <a href="" class="project-link">View Github Repo<i class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <div class="project-details">
@@ -95,7 +106,7 @@
                     </div>
                     <div class="project-item">
                         <div class="project-view">
-                            <img src="https://source.unsplash.com/random/800x400" alt="">
+                            <img src="https://source.unsplash.com/random/800x700" alt="">
                             <div class="clickthroughs">
                                 <a href="" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="" class="project-link"><i class="fab fa-github"></i></a>
@@ -158,20 +169,33 @@
             <div class="contact-form mobile-only">
                 <h1 class="contact-header">Contact</h1>
                 <form action="https://smartforms.dev/submit/5ebd74988a02626591cb5ade" method="POST" id="contactform">
-                    <input type="text" name="name" id="name" required placeholder="Your name">
-                    <input type="email" name="email" id="email" required placeholder="Your email">
-                    <textarea name="message" form="contactform" required placeholder="Your message">
+                    <div class="name-and-email">
+                        <div class="name-form-group">
+                            <label for="name">Who are you?</label>
+                            <input type="text" name="name" id="name" required placeholder="Your name">
+                        </div>
+                        <div class="email-form-group">
+                            <label for="email">Where Can I Contact You?</label>
+                            <input type="email" name="email" id="email" required placeholder="Your email">
+                        </div>
+                    </div>
+                    <div class="message-form-group">
+                        <label for="message">What's up?</label>
+                        <textarea name="message" form="contactform" required placeholder="Your message"></textarea>
+                    </div>
+                    <div class="form-buttons">
                         <input type="submit" value="send">
                         <input type="reset" value="clear">
+                    </div>
                 </form>
             </div>
         </div>        
     </div>
     <footer>
         <ul class="footer-socials desktop-only">
-            <li class="footer-social-item"><a href="https://uk.linkedin.com/in/martinryanellis" target="_blank"><i class="fab fa-linkedin"></i></a></li>
             <li class="footer-social-item"><a href="https://github.com/MartEllis" target="_blank"><i class="fab fa-github"></i></a></li>
             <li class="footer-social-item"><a href="https://www.instagram.com/marvellis_/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li class="footer-social-item"><a href="https://uk.linkedin.com/in/martinryanellis" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
         </ul>
     </footer>
     

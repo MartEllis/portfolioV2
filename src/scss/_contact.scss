@@ -7,6 +7,12 @@
         align-items: center;
         margin: 2rem 0;
 
+        label {
+            color: #686868;
+            display: inline-block;
+            margin-bottom: .4rem;
+        }
+
         input:not([type="submit"]):not([type="reset"]), textarea {
             width: 100%;
             margin-bottom: 1rem;
@@ -15,7 +21,8 @@
             line-height: 1.6rem;
             font-family: $font;
             font-weight: 300;
-            border: none;
+            border: 1px solid #4d4d4d;
+            border-radius: 5px;
 
             &[name="message"] {
                 height: 8rem;
@@ -27,16 +34,23 @@
                 font-family: $font;
                 font-weight: 300;
             }
+            
+            &:focus {
+                border: 2px solid #428fe7;
 
-            &:invalid {
-                border-bottom: 2px solid #D85959;   
-                box-shadow: none;       
+                &:valid {
+                    border: 2px solid rgba(20,181,36,0.75);   
+                }
             }
 
             &:valid {
-                border-bottom: 2px solid rgba(20,181,36,0.75);   
+                border: 2px solid rgba(20,181,36,0.75);   
                 box-shadow: none;    
-            }            
+            }
+
+            &:required {
+                box-shadow: none;
+            }
         }
 
         input[type="reset"], input[type="submit"] {
@@ -55,7 +69,7 @@
         }
     
         input[type="reset"] {
-            background-color: #D85959;
+            background-color: $accent2;
             margin-top: .6rem;
         }
     
@@ -69,6 +83,12 @@
 @media screen and (min-width: 960px) {
     div.contact-form {
         max-width: 90%;
+        margin-top: 1rem;
+
+        .contact-header {
+            display: none;
+
+        }
 
         .name-and-email {
             display: flex;
@@ -78,6 +98,22 @@
 
             input {
                 flex-basis: 48%;
+            }
+        }
+
+        .form-buttons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            input[type="submit"] {
+                width: 60%;
+            }
+
+            input[type="reset"] {
+                width: 38%;
+                margin-top: 0;
+
             }
         }
     }

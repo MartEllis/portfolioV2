@@ -3,7 +3,8 @@
 $header_font: 'Neuton', serif;
 $font: 'Roboto', sans-serif; 
 $font-color: #1b1a1a;
-$accent: rgb(18, 104, 216);
+$accent: rgb(54, 180, 71);
+$accent2: rgb(20, 92, 13);
 // $accent: #4A00C3;
 
 * {
@@ -44,6 +45,18 @@ h1 {
 }
 
 .desktop-only {
+    display: none !important;
+}
+
+.hide-scrollbar {
+    /*FireFox*/
+    scrollbar-width: none;
+    /*IE10+*/
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    /*Chrome, Safari, Edge*/
     display: none;
 }
 
