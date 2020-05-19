@@ -31,7 +31,7 @@
                     a {
                         font-size: .7rem;
                         text-transform: uppercase;
-                        color: $accent;
+                        color: $accent2;
                         text-decoration: none;
                         display: block;
                         margin: 1rem 0;
@@ -48,8 +48,7 @@
                 }
 
                 &:hover img {
-                    filter: brightness(0.2);
-                    // transform: scale(1.1);
+                    opacity: 0.2;
                 }
             }
 
@@ -61,7 +60,7 @@
 
                     p:nth-child(1) {
                         font-size: 1rem;
-                        color: $accent;
+                        color: $accent2;
                         font-weight: 700;
                     }
 
@@ -100,6 +99,15 @@
         max-height: 90vh;
         overflow: scroll;
         scroll-behavior: smooth;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .projects {
+        margin-top: 0;
+        max-height: 90vh;
+        overflow: scroll;
+        scroll-behavior: smooth;
 
         div.projects-container {
             display: flex;
@@ -108,6 +116,7 @@
             align-items: initial;
             max-height: inherit;
             max-height: 150vh;
+            padding-bottom: 10vh;
 
             .project-item {
                 width: 47%;

@@ -3,8 +3,9 @@
 $header_font: 'Neuton', serif;
 $font: 'Roboto', sans-serif; 
 $font-color: #1b1a1a;
-$accent: rgb(54, 180, 71);
-$accent2: rgb(20, 92, 13);
+$accent: rgb(67, 133, 231);
+$accent2: rgb(8, 63, 145);
+$background-color: white;
 // $accent: #4A00C3;
 
 * {
@@ -71,22 +72,26 @@ h1 {
     }
 
     .main {
-        max-height: 90vh;
         flex-direction: row;
         overflow: hidden;
 
         .left {
             flex-basis: 50%;
-            max-height: 90vh;
         }
 
         .right {
             flex-basis: 50%;
-            max-height: 90vh;
         }
     }
 
     .container {
+        max-width: 85%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
         max-width: 75%;
     }
+
 }

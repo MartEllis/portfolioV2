@@ -14,7 +14,7 @@ nav {
         .logo {
             font-weight: 800;
             font-size: 2.6rem;
-            color: $accent;
+            color: $accent2;
             -webkit-text-fill-color: white; /* Will override color (regardless of order) */
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: $accent;
@@ -49,6 +49,7 @@ nav {
 
 
 @media screen and (min-width: 960px) { 
+
     .hamburger {
         display: none !important;
     }
